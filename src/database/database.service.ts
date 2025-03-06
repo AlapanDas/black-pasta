@@ -9,7 +9,7 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
     port: 49317,
     database: "postgres",
     user: "postgres",
-    password: process.env.DB_PASS,
+    password: process.env.DB_PASS?.toString(),
   });
 
   get connection() {
