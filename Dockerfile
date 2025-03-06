@@ -16,8 +16,6 @@ COPY . .
 # Expose port 3000
 EXPOSE 3000
 
-# Copy .env file
-COPY .env .env
 
 # Start the application
 CMD ["npm", "run", "start"]
