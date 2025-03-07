@@ -1,4 +1,4 @@
-export type StudentLogin={
-    username:string,
-    password:string
-}
+export type StudentLogin = {
+  username: string;
+  password: string;
+};

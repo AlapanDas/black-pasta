@@ -1,14 +1,14 @@
-import { Injectable, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
-import * as pgPromise from "pg-promise";
+import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import * as pgPromise from 'pg-promise';
 
 @Injectable()
 export class DatabaseService implements OnModuleInit, OnModuleDestroy {
   private pgp = pgPromise();
   private db = this.pgp({
-    host: "db.cloudtop.dev",
+    host: 'db.cloudtop.dev',
     port: 49317,
-    database: "postgres",
-    user: "postgres",
+    database: 'postgres',
+    user: 'postgres',
     password: process.env.DB_PASS?.toString(),
   });
 
@@ -17,11 +17,11 @@ export class DatabaseService implements OnModuleInit, OnModuleDestroy {
   }
 
   async onModuleInit() {
-    console.log("Database connected");
+    console.log('Database connected');
   }
 
   async onModuleDestroy() {
     await this.pgp.end();
-    console.log("Database connection closed");
+    console.log('Database connection closed');
   }
 }
